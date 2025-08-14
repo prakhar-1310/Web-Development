@@ -1,0 +1,16 @@
+-> Query Parameter
+url: https://localhost:8080/search?search=live+classes
+    here, https -> protocol
+    localhost:8080/search -> resource url
+    ? -> after this Query
+    search=live+classes -> queryString or queryParameter
+        search -> key
+        live+classes -> value
+
+
+params -> :
+query  -> ?
+
+
+
+jabtak response send nhi hoga tb tk browser run krta hai

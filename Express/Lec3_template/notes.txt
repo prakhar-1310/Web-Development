@@ -1,0 +1,54 @@
+--> Templating -> one structure and use it when required
+/cat -> 1 page
+/dog -> 1 page
+No -> it is impossible
+1 route, 1 page
+when page do not refress when we search anything that means req is ejs request
+in ejs render model -> there is JS layer between server and browser(client)
+when browser send req to server it searches in DB and return relevant result to the server, if page dont refress means data send to client is in the form of JS (data)
+And with returned data page will render at client side without refressing the page
+
+
+
+
+
+-> res.render(view)
+to see a template we have to render
+view -> its contain templates (show) (UI how it is looking)
+to view we need -> templating engines (templating language)
+work of templating engine : to show view or structure
+types of templating engines:
+1.hbs(handlebars)
+2.ejs (embedded java script)   <- we use this
+3.pug
+4.jade
+5.nunjucks
+
+
+-> ejs 
+it is a package, we have to require this
+ejs is basically used for writing the js logic in html environment
+npm i ejs
+tags in ejs:
+1. <%   %>  -> Scriptlet tag for control flow(loop, if else) (no output)
+2. <%=  %>  -> Output the value into the template(evaluate)
+3. <%#  %>  -> Commenting tag, no execution, no output
+4. <%-  %>  -> Output the unescaped value into the template
+
+Note: we will write least possible JS logic inside our ejs
+
+-> complusion / routine :- always to use this:-> app.set("view engine", "ejs")
+whatever will be ur template (1-1000) all these file will be inside a folder name 'views'
+templating file will always be inside views folder and all file will be saved with extension '.ejs'
+
+
+
+
+
+// MVC
+architecture 
+model : it contain schema
+view:
+controller:it contains logic
+
+// npm i express ejs nodemon 

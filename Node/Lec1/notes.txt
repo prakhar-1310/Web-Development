@@ -1,0 +1,62 @@
+node is a copy of browser(JS engine)code which is used to run js code
+node is an environment
+
+environment : place where we can run code
+
+node have few extra features
+
+node: Js run time environment
+document is a web api
+browser have document
+node dont have document
+window is a global object in browser
+in case of node global object is global
+browser cant access system file (as browseris used to access data over internet)
+but node js have access to file system(as node js is downloaded in our system)
+
+npm node package manager (node ke sath aata h)
+
+npm, pip, yarn, conda -> CPM central package manager
+used to handle package related to respective domain
+like npm for node package handler
+
+node -v   -> for version
+
+node is a REPL
+REPL ->read evaluate print loop
+to open repl: cmd -> node  
+
+process is an object , contains all ongoing information regarding node js process
+to open process -> type process in node repl
+
+process object -> inside that there is argv object
+argv -> argument vector
+returns an array of node installation path
+
+
+cwd -> current working directory
+cwd is a function
+kis folder structure se aap run kar rhe ho apne project ko
+Aap kha khade ho
+
+
+
+__dirname:directory name
+code kha chal rha h
+process tk ka path dega
+
+
+
+
+ctrl + c -> for one step back
+2 time ctrl c to come out of node in terminal
+
+
+
+
+
+
+PS D:\Study Materials\Sup150\Web development class> cd .\Node\           
+PS D:\Study Materials\Sup150\Web development class\Node> cd .\Lec1\
+PS D:\Study Materials\Sup150\Web development class\Node\Lec1> node app.js
+welcome 
