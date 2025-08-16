@@ -1,0 +1,13 @@
+--> Get vs Post
+
+-> Get: This should be used to fetch/retrive the data.
+Can we send data using GET :- Yes but we dont do this
+  Because: Here the data is available inside our url as Query Parameter (?) means less secure
+  data sent using get that will be a plain string & only available as QP
+  limited amount of data can be sent 4096 bytes of data
+
+-> Post : This should be used to make the changes in the server(DB)
+Here the data is available as req.body
+More Secure (as data not available in url)
+data of different type can be sent ex. text, XML, JSON, etc.
+Huge huge amount of data can be sent by post.

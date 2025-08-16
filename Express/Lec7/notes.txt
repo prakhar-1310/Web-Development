@@ -1,0 +1,42 @@
+--> Get vs Post
+
+-> Get: This should be used to fetch/retrive the data.
+Can we send data using GET :- Yes but we dont do this
+  Because: Here the data is available inside our url as Query Parameter (?) means less secure
+  data sent using get that will be a plain string & only available as QP
+  limited amount of data can be sent 4096 bytes of data
+
+-> Post : This should be used to make the changes in the server(DB)
+Here the data is available as req.body
+More Secure (as data not available in url)
+data of different type can be sent ex. text, XML, JSON, etc.
+Huge huge amount of data can be sent by post.
+
+
+
+Strongly coupled application :- in which porigin path(localhost:3000) is fixed or known
+
+
+inside req ---> params-> subreddit,query->query String,body ->post, req.data
+in post it send entire form data in formdata(type of data) format
+express attach 'body' object with req 
+but by default req.body give us undefined
+
+
+
+to see the data:(body parsing middleware)
+app.use(express.json()) -> for json file
+app.use(express.urlencoded({extended : true}))  -> for formdata
+after this if we use req.body it will give us data
+
+
+res-> send(basically text bhejna),render(display/show template/page )
+
+form-> action (kis jagah par jakar submit hoga ,path),method(get or post , get by default)
+ 
+
+
+--> PostMan:
+ used to use post or get methods
+ sending data without using browser in different formats like .json, formData, etc.
+ Also used in testing

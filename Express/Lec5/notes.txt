@@ -9,3 +9,7 @@
 --> In views folder we can have many ejs file and we have to always write html header and footer in every ejs file
   So, to save us from this repetitive tasks we use to divide html in two parts header & footer And we save these two files in 'partials' folder in 'views' folder 
   -> partial contains repeated code
+
+
+
+
