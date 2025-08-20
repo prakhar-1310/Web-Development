@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Showing a particular blog</h1>
+    <h2>ID: <%=found.id%> </h2>
+    <h2>author: <%=found.author%> </h2>
+    <h2>Comment: <%=found.comment%> </h2>
+    <a href="/blogs/<%=found.id%>/edit"><Button>Edit</Button></a>
+    <a href="/blogs"><Button>Back</Button></a>
+    <form action="/blogs/<%=found.id%>?_method=Delete" method="Post">
+        <button type="submit"> Delete </button>
+    </form>
+</body>
+</html>

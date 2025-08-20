@@ -1,0 +1,124 @@
+DB:- collection of similar kind of data
+Ex. list of programming language, list of IES
+
+DATA:- collection of properties
+useful/meaningful data is known as information
+
+Everything is data , jo meri kaam ki h vo information
+
+Q. What else we can use to store the data?
+File System
+
+Q. why we dont use file System
+Ans. DATA Redundancy (duplicacy, repetition)
+Data ineficiency
+Less Security
+less Scalability
+Limited data
+Searching difficult
+
+
+
+->Type of DATABASE
+1. SQL(Structured Querry Language) -> Not a db its a query language
+SQL: vo database jo output / result show krne ke liye SQL queries ka use karte h un DB ko sql database kehte h
+Ex. My Sql
+2. NO SQL: they dont use sql query to show result
+
+
+
+Q. What is DBMS?
+Ans. Software which manages data
+types 2:
+1. RDBMS: Relational (jha pr table hote h) -> SQL
+2. NRDBMS : Non Relational (jha pr table nhi hote) -> NoSQL
+
+
+table:
+primary key: uniqually identifies the table
+foreign key: helps in connecting 2 tables
+            PK of another table
+
+------------------------------------------------------------------------
+
+
+No SQL DB:-
+
+how it is stored:- in the form of object (we dont have table in this)
+{
+    {
+        "id": 1,
+        "name" : "Samarth",
+        "text" : "hi from samrth"
+    },
+    {...},
+    {...}
+}
+
+
+Q. Which db to choose?
+SQl / NoSQL
+
+To choose DB we use 'CAP' Theorem:
+1. Consistency: Same everywhere (dont loose its consistency) -> sql more consistent
+2. Availability: ex. utube view (19-20 chalta h but available when required)-> non sql is better
+3. Partition Tolerance: if same data is saved at different servers then changes should be reflected in both the servers -> sql and nosql they both are equally trained
+
+
+---------------------------------------------------------------------------------
+-> Mongo DB
+
+Q. Why MongoDB?
+Ans. used Widely (MERN, MEAN, MEVN in all these MongoDB is common)  
+    Easy Syntax
+
+
+Architecture: 2 types
+1. Monolithic: 1DB
+2. Micro-service: Multiple DB
+
+
+install MongoDB from MongoDB community
+then install MongoDB shell
+
+in cmd write-> mongosh to open MongoDB shell (also known as mongosh)
+mongosh is also an repl
+1+1 ->2
+exit or ctrl+c -> to get exit from mongosh
+
+show dbs;
+or show dbs
+or show databases -> all are same, used to see all db present
+
+test-> default db of no use
+
+use admin -> to switch db 'admin'
+
+db -> tell us where we are currently working
+
+db.dropDatabase() --> delete db where we currently working (dont use this command)
+
+use newDB ->use command is also used to create new db
+
+new db does not shown until it has something in it
+
+
+Q. What is a Collection ?  (specific for MongoDB)
+Ans. just like table present in sql db
+
+Q. What is document?
+Ans. Each atomic entity inside a Collection is a document.
+
+Document -> DOM or DB
+
+Document -> collections -->DB (NoSQL)
+
+rows/column --> tables -> DB (SQL)
+
+Q. How Data is being stored in the DB?
+Ans. BSON (Binary JSON)
+
+->Difference bet JSON & BSON
+1. JSON is slower than BSON
+2. JSON occupies more space
+3. JSON supports less/basics datatypes

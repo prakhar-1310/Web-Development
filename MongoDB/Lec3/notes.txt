@@ -1,0 +1,7 @@
+Model is JS class and known as Collection for our DB
+
+DB --->Collection(Model) --->Doc
+For model creation we need schema
+
+
+show collections -> used to see collections in db

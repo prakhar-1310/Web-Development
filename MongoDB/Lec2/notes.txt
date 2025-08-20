@@ -1,0 +1,347 @@
+Every single entity is knowns as document.
+when we will add a new document in MongoDB, then automatically MongoDB will assign a unique id to a doc.
+
+--> CRUD:
+DB->Collections->Document
+1. create:-
+
+test> use Naruto
+switched to db Naruto
+Naruto> db.movies.insertOne({name : "Supername", imdb : 7.7})  // db is cureent db, movies is a collection, insertOne({}) is a MongoDB method always accept an object
+{
+  acknowledged: true,
+  insertedId: ObjectId('68a23906cfa962c163eec4a9')
+}
+Naruto> show collections
+movies
+Naruto> db.movies.find({})
+[
+  {
+    _id: ObjectId('68a23906cfa962c163eec4a9'),
+    name: 'Supername',
+    imdb: 7.7
+  }
+]
+
+// here Naruto is a db; movies is a collection and {----} is a single document
+
+
+2->InsertMany:- [{},{}] array ke andar multiple objects (create)
+
+Naruto> db.movies.insertMany([{ name: "spiderMan", imdb:6}, {name:"Fast & Furious", imdb:8}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('68a314cb843b2cf592eec4a9'),
+    '1': ObjectId('68a314cb843b2cf592eec4aa')
+  }
+}
+Naruto> db.movies.find()
+[
+  {
+    _id: ObjectId('68a23906cfa962c163eec4a9'),
+    name: 'Supername',
+    imdb: 7.7
+  },
+  {
+    _id: ObjectId('68a314cb843b2cf592eec4a9'),
+    name: 'spiderMan',
+    imdb: 6
+  },
+  {
+    _id: ObjectId('68a314cb843b2cf592eec4aa'),
+    name: 'Fast & Furious',
+    imdb: 8
+  }
+]
+
+3. find()-> (Read)
+
+Naruto> db.movies.find({imdb:8, name:"Fast & Furious"})
+[
+  {
+    _id: ObjectId('68a314cb843b2cf592eec4aa'),
+    name: 'Fast & Furious',
+    imdb: 8
+  }
+]
+
+Naruto> db.movies.find({imdb : 8})
+[
+  {
+    _id: ObjectId('68a314cb843b2cf592eec4aa'),
+    name: 'Fast & Furious',
+    imdb: 8
+  },
+  {
+    _id: ObjectId('68a316ae843b2cf592eec4ab'),
+    name: 'Batman',
+    imdb: 8
+  }
+]
+
+
+4. updateOne:
+db.movies.updateOne({kisko change krna h},{kya change karna h})
+
+Naruto> db.movies.updateOne({name:"Batman"}, {$set:{imdb:10, name: "Falsh"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+Naruto> db.movies.find({name:"Falsh"})
+[
+  {
+    _id: ObjectId('68a316ae843b2cf592eec4ab'),
+    name: 'Falsh',
+    imdb: 10
+  }
+]
+
+Note: if multiple with the same name , first encountered will be updated
+
+
+5. updateMany:
+db.movies.updateMany({kisko change krna h},{kya change karna h})
+
+Naruto> db.movies.updateMany({imdb : 8},{$set:{name:"8 imdb wala movie"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+Naruto> db.movies.find()
+[
+  {
+    _id: ObjectId('68a23906cfa962c163eec4a9'),
+    name: 'Supername',
+    imdb: 7.7
+  },
+  {
+    _id: ObjectId('68a314cb843b2cf592eec4a9'),
+    name: 'spiderMan',
+    imdb: 6
+  },
+  {
+    _id: ObjectId('68a314cb843b2cf592eec4aa'),
+    name: '8 imdb wala movie',
+    imdb: 8
+  },
+  {
+    _id: ObjectId('68a316ae843b2cf592eec4ab'),
+    name: 'Falsh',
+    imdb: 10
+  }
+]
+
+Note: if multiple found, then change will reflect in all 
+
+
+6. Delete:
+db.movies.deleteOne({})
+
+Naruto> db.movies.deleteOne({name:"8 imdb wala movie"})
+{ acknowledged: true, deletedCount: 1 }
+
+Note: first encounter will be deleted
+
+
+7. deleteMany({})
+
+Naruto> db.movies.deleteMany({imdb:10})
+{ acknowledged: true, deletedCount: 1 }
+
+
+8. db.movies.deleteOne({}) -> if no condition will be provided then it will delete first doc
+
+Naruto> db.movies.deleteOne({})
+{ acknowledged: true, deletedCount: 1 }
+
+
+9. db.movies.deleteMany({}) -> this will delete all docs
+
+Naruto> db.movies.deleteMany({})
+{ acknowledged: true, deletedCount: 1 }
+Naruto> db.movies.find()
+
+------------------------------------------------------------------------------
+---> MongoDB Operations:
+
+1. Equals ($eq)
+
+Naruto> db.movies.find({imdb: {$eq : 7}})
+[
+  { _id: ObjectId('68a32043843b2cf592eec4ad'), name: 'Flash', imdb: 7 },
+  {
+    _id: ObjectId('68a32043843b2cf592eec4af'),
+    name: 'Shainara',
+    imdb: 7
+  }
+]
+Naruto> db.movies.find({imdb : 7})
+[
+  { _id: ObjectId('68a32043843b2cf592eec4ad'), name: 'Flash', imdb: 7 },
+  {
+    _id: ObjectId('68a32043843b2cf592eec4af'),
+    name: 'Shainara',
+    imdb: 7
+  }
+]
+
+
+2. greater than ($gt) || greater than equals ($gte)
+
+Naruto> db.movies.find({imdb :{$gt : 6}})
+[
+  { _id: ObjectId('68a32043843b2cf592eec4ac'), name: 'xyx', imdb: 9 },
+  { _id: ObjectId('68a32043843b2cf592eec4ad'), name: 'Flash', imdb: 7 },
+  {
+    _id: ObjectId('68a32043843b2cf592eec4af'),
+    name: 'Shainara',
+    imdb: 7
+  }
+]
+
+
+3. less than ($lt) || less than equal ($lte)
+
+Naruto> db.movies.find({imdb : {$lte : 7}})
+[
+  { _id: ObjectId('68a32043843b2cf592eec4ad'), name: 'Flash', imdb: 7 },
+  {
+    _id: ObjectId('68a32043843b2cf592eec4ae'),
+    name: 'GoodNews',
+    imdb: 6
+  },
+  {
+    _id: ObjectId('68a32043843b2cf592eec4af'),
+    name: 'Shainara',
+    imdb: 7
+  }
+]
+
+
+4. inside ($in)
+
+Naruto> db.movies.find({imdb : {$in : [5,6,7,8]}})
+[
+  { _id: ObjectId('68a32043843b2cf592eec4ad'), name: 'Flash', imdb: 7 },
+  {
+    _id: ObjectId('68a32043843b2cf592eec4ae'),
+    name: 'GoodNews',
+    imdb: 6
+  },
+  {
+    _id: ObjectId('68a32043843b2cf592eec4af'),
+    name: 'Shainara',
+    imdb: 7
+  }
+]
+
+
+-> Logical operator
+
+5. And ($and)
+
+Naruto> db.movies.find({$and : [{imdb:{$gt : 5}},{imdb : {$lt : 9}}]})
+[
+  { _id: ObjectId('68a32043843b2cf592eec4ad'), name: 'Flash', imdb: 7 },
+  {
+    _id: ObjectId('68a32043843b2cf592eec4ae'),
+    name: 'GoodNews',
+    imdb: 6
+  },
+  {
+    _id: ObjectId('68a32043843b2cf592eec4af'),
+    name: 'Shainara',
+    imdb: 7
+  }
+]
+
+6. OR ($or)
+
+Naruto> db.movies.find({$or : [{imdb:{$gte : 9}},{imdb : {$lte : 8}}]})
+[
+  { _id: ObjectId('68a32043843b2cf592eec4ac'), name: 'xyx', imdb: 9 },
+  { _id: ObjectId('68a32043843b2cf592eec4ad'), name: 'Flash', imdb: 7 },
+  {
+    _id: ObjectId('68a32043843b2cf592eec4ae'),
+    name: 'GoodNews',
+    imdb: 6
+  },
+  {
+    _id: ObjectId('68a32043843b2cf592eec4af'),
+    name: 'Shainara',
+    imdb: 7
+  }
+]
+
+--------------------------------------------------------------------------
+
+--> Interaction between Express & MongoDB shell:
+
+MongoDB provides mongosh (MongoDB shell)
+
+Express<-------Interact---------->mongosh
+
+
+since we are working with 
+NoSql-> document -> ODM (Object Document model)
+
+There is a layer between express and MongoDB shell known as ODM
+this ODM is 'mongoose'
+work of ODm is to convert the JSON/BSON data into the usable JS Object
+
+if we are working with SQL db then there is a layer known as ORM (object relational model)
+
+-----------------------------------------------------------------------------
+
+mongoose ->
+1.npm install mongoose
+2. require
+3. connect: returns a promise -> which will be either resolved(.then) or rejected(.catch)
+
+mongoose.connect('127.0.0.1.27017/test')
+                  localhost (port no.)
+
+db also use server to Interact
+
+this is the reason why we always use 'POST' method to Interact with server
+
+
+
+
+
+since we are using mongoose to interact with MongoDB
+therefore we will write js code to make a collections and doc
+in JS, Model (or JS class) is a collection
+
+In order to create a collection(Model) we need to create a Schema(BluePrint)
+
+I cant create model directly, we have to create schema first, then model and finally DB
+schema -> Model(Collection) -> DB
+
+
+
+
+
+Server(Express) ----JS-->ODM(mongoose) ----JSON/BISON--->MongoDB
+Server(Express) <---JS---ODM(mongoose) <---JSON/BISON----MongoDB
+
+when express recieves a JS data then
+Schema tell how data will be mapped
+name -> String
+imdb -> Number
+
+After this model will be created
+
+
+
+
+
+in this _id will be give by mongoose(Express)
