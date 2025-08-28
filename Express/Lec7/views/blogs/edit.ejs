@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>For editing a blog</h1>
+    <fieldset>
+        <form action="/blogs/<%=found.id%>?_method=PATCH" method="Post"> <!--method by default get -->
+            <!-- actions:form submit hone par kha jayega -->
+            <!-- since we partial editing therefore we use Patch method 
+            and to use patch method we have to use methodOverride  -->
+            <div>
+                <label for="comment">Edit Comment:</label>
+                <input type="text" name = "comment" id="comment" value="<%=found.comment%>">
+            </div>
+            <button type="submit">Edit Comment</button>
+        </form>
+    </fieldset>
+</body>
+</html>

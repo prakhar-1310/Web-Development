@@ -1,0 +1,52 @@
+--> NPM
+npm is also like a cmd tool
+from here we can easily install new packages
+ex:
+$ npm install --save give-me-a-joke
+here $ shows that we have to rum thid file in terminal
+--save is not important to write as it is for earlier versions of vs code
+npm insatll give-me-a-joke
+install -> i
+npm i give-me-a-joke
+
+
+Steps to make a project:
+s1: make a folder
+s2: cd .. folder name
+s3: need to initialize a project and creates a package.json file
+S4: npm init  --> means mai apne project ko npm ke through initialise kar rha hu
+s5: work of package.json : project kis kis pr dependent h
+                        : info of the project
+s6: install the package
+ex: $ npm install --save give-me-a-joke
+when we install a package two new file is created : package-lock.json  &  node_modules
+package-lock.json: installed package internally kis kis pr dependent h uska information
+node_modules: source code of installed packages
+these two files are huge large dont share these two files
+node modules contains some sensitive info and by using these info one can hack ur package so dont share
+s7: now make index.js file, and require downloaded packages and start ur work
+
+
+install is of two type : 
+1. local : available for the project where we have installed the package
+npm i colors
+2. global : available globally for all projects
+npm i -g colors
+
+
+we can also uninstall the package
+npm uninstall colors
+or npm u colors
+
+rm -r node_modules                 -r stands for recursive remove
+rm -r package-lock.json
+
+rm -f file name               -f denoted forceful remove
+
+
+
+
+
+
+-> to install all dependent file and package at once:
+npm i

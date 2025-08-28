@@ -1,0 +1,131 @@
+# React:
+- Its a JS library
+
+
+we should avoid using DOM or try to minimize its usage.
+Because DOM is a resource heavy operation, application becomes slower
+
+server(server se sara data lana)<AJAX<React
+
+
+
+# Difference which make react special
+
+React have a concept of virtual DOM (virtual dom not really exits, it just a concept)
+Suppose there is a page which is already rendered (DOM) and new page is to be rendered (virtual DOM) then
+react will find the Difference between both the doms and render karega jo Different hongi
+
+
+
+# React is a component based architecture
+component: har choti se choti cheej can be a component
+<h1>Hello</h1> -> it is also a component
+
+all component integrate ---> make a website
+suppose a website is divided into 2 or 4 parts known as component all these component comes together to form an website
+
+---------------------------------------------------------------------------------------
+
+Implementation:
+npx create-react-app first-app   <- this will create one react app 
+file name should be in lowerCase
+
+
+->
+npm start
+    Starts the development server.   --> no need of nodemon
+
+  npm run build
+    Bundles the app into static files for production.
+
+  npm test
+    Starts the test runner.
+
+  npm run eject
+    Removes this tool and copies build dependencies, configuration files    
+    and scripts into the app directory. If you do this, you can’t go back!  
+
+We suggest that you begin by typing:
+
+  cd first-app
+  npm start
+
+Happy hacking!
+
+
+-----------------------------------------------------------------
+backend ka default port : - 8080
+Frontend(react) ka default port : - 3000
+
+2 folder of our use:
+1. public-> index.html (the first page(main page) which got loaded) --> we never make changes in public folder
+2. src (source folder)
+
+
+#src -> in this folder we will make changes
+delete setupTest, reportWebVitals,logo.svg,app.test.js  -> these files of our no need
+
+
+File Structure:
+index.html (only html file in react app)<----index.js <-----App.js <-----------(Components)(sam.js + cat.js + dog.js + cb.js)
+
+
+5,6 or 10 JS file how to manage this -> we have 'webpacks'
+
+webpacks : it simplifies the build process for React applications. It allows developer to manage dependencies and bundle flies with ease.
+Automatically installed by React.
+
+
+Most important JS file:- index.js
+
+-----------------------------------------------------------------
+
+# components: simple function which we can use
+2Types: 
+1. class Component (we dont use this / old fashioned)
+2. functional component (we use this/ latest one)
+
+
+-----------------------------------------------------------------
+
+erase everything present inside the App.js
+write rafce
+means:- react arrow functional bana aur export kara as a component
+
+
+JSX : -JAVA scripts XML 
+means mixture of JS and HTML
+return ke inside likha hua code JSX hota h
+
+
+Q. We learned that JS is the only Programming language which is understood by our browser, then how this jsx file is understood by browser?
+Ans. JSX ---converted-----> JS Vanilla (or JS code)-----> browser
+
+conversion of JSX in JS is done by 'Babel'(JS compiler)
+
+-------------------------------------------------------------------
+
+- Whenever you create any component just try to give the names starting with capital letter.
+
+
+
+CRUX:
+-how css file managed since we are working with JS->webpacks manages all the files
+
+-Syntax over semantics
+-main speciality of component that we can use any no. of times-> reusability
+
+
+-props -> properties / attributes -> work: to tranfer information or data
+
+------------------------------------------------------------------------------------
+
+****React Hooks:
+after rendering one page if the value of some item got changed, then the changes would not appear
+because page is not rerendered
+-> Solution : react Hooks
+Hooks:- it is special built in function provided by react.
+1.useState():-it accepts an argument (String/boolean/{}/[]/anything which we want to change) and return an array with 2 items, 1st one is name of variable(or state (variable known as state in react)) and 2nd one is function(with this function we change the value of state or variable)
+Let [age , Setage] = useState(anything)
+2.useEffects():- it accepts two arguments, one is cb function and 2nd one is array (dependent array), if changes occur in this array then page will be rerendered
+use se starting ho means hooks.

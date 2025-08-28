@@ -1,0 +1,48 @@
+npx create-react-app .
+. represents that file name will we same as folder name we are currently inside.
+in fontend we will also install react-router-dom and axios
+axios:-
+
+
+
+---> useRef()-> ref for reference
+when we want a reference to a value & there is no need of rerendering.
+example: screenshot attached
+
+
+
+
+
+
+
+
+
+
+
+
+--------------------------------------------------------------------------------------------
+****Backend:---------------
+npm init-y
+npm i express nodemon mongoose
+
+in backend we will have: models, app.js, seed.js, api(not routes because routes is used to redirect or render and api is used to send data to frontend)
+
+
+**CORS: cross origin resource sharing:
+means for transporting data from backend to frontend or vice verca we have to transfer data from one port to another port
+means ek server se dusre server ko request bhejna are not allowed
+to do this we have to instal CORS
+npm i cors
+
+install this in backend
+and take request from frontend (3000 port no.)
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,27 @@
+Model is JS class and known as Collection for our DB
+
+DB --->Collection(Model) --->Documents
+For model creation we need schema
+
+
+show collections -> used to see collections in db
+
+
+MVC
+Model-> will contain schema , model
+Views -> will contain ejs file
+Controller -> will contain logic 
+app.get('/', ()=>{}) -> cb func is a logic 
+store this in routes folder
+
+All these are folders
+
+
+
+Model:-
+User.model.JS
+Restaurant.model.js
+
+Controller:
+user.controller.js
+restaurant.controller.js

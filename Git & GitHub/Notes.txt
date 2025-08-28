@@ -1,0 +1,74 @@
+Suppose there is team working on a project, then to sychronize(har jagah changes nazar aae) there project they use VCS
+
+there are many VCS:
+bit keeper, mercury, git
+
+
+Version control System:
+2 types:
+1. Centralised VCS
+-> Code is present at one place & everybody who changes anything it directly gets reflected(online)
+-> Online net connection required
+-> No backup is available
+
+
+2. Distributed VCS (GIT)
+-> Code is present at a place, & baaki log copies that code & make their changes.
+-> Continuous net connection is not required.
+-> Backup is available.
+
+
+----------------------------------------------------------------
+
+1. git init   -> run this command for initialize the git in the folder
+2. ls -a -> to see hidden file
+3. git status -> keep an eye on all the files and tell ki aapki banai hui file staging area m hai ya nhi
+4. git add . -> all file got staged
+5. git add fileName -> file got staged 
+6. git commit -m"message" -> save version (photo clicked)
+7. git log -> status or info of all the versions
+8. head -> kha pr aap kaam kr rhe ho
+9. git checkout commitId -> to go to previous commits(version) And never do changes in previous versions
+10. git checkout main -> to comeback to ur main branch
+
+
+--------------------------------------------------------------------
+# Sandboxing:
+pehle istemal kare phir vishwas kare
+if we have version v1, and we want to add some feature then we will not make new version v2 with new feature
+because v2 version may have some bug and code phat jayega
+thats why we use branch of version v1 i.e, 1.1 
+this brach v1.1 is just a copy of version v1, and the changes we make in branch will not affect or reflect in main branch
+if we like the added feature then we can combine that branch to main branch
+if we dont like the changes then we can easily comeback to main branch
+
+11. git branch -> checks current branch
+12. git branch new_feature -> creates a new branch
+13. git checkout new new_feature -> takes u to new branch
+14. git checkout -b new_feature   -> creates new branch and takes u to new branch
+15. git checkout main -> to go to main branch
+16. git merge new_feature -> to merge the new branch with main branch
+17. git branch -d new_feature -> delete new_feature branch
+
+----------------------------------------------------------------------
+# Merge Conflict :
+this situation arises when
+in main branch we have one file file1
+And in another branch we have file with same name file1 with different content
+when we merge these two branch then merge conflict arises
+
+to solve this conflict 
+go to vs code and ther vs code will show both the code , erase any one and save
+After saving commit the changes
+conflict will be resolved now.
+
+-----------------------------------------------------------------------
+
+18. git diff id1 id2 -> this will show the difference between two versions
+
+
+------------------------------------------------------------------------
+# clonning :
+
+19. git clone https://.....(folder github link)........... -> this will clone the entire folder to ur device
+20. git pull origin main -> if there were any changes in the github repo then these changes will reflect in ur pc too

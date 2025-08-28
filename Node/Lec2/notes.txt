@@ -1,0 +1,33 @@
+->path module 
+directly use it 
+path.join('sam','prakhar','hii','project')
+'sam\\prakhar\\hii\\project'
+
+
+->file system (fs): module present in node
+in order to use these modules we dont need to install anything
+work as dbms
+used before dbms
+in file system we can perform CRUD operations  (create, read, update, delete )
+due to data redundancy in file system dbms came in picture
+data redundancy->1.copy of data
+        2. security
+        3. unmatched/incorrect data
+
+
+
+-> Requiring a file
+multiple js file increases readability
+without export no import
+
+
+
+-> Requiring a folder
+when we require a folder its mandatory to create index.js file
+Because things exported by index.js file will be imported when we require a folder
+
+
+-> for package.json 
+npm init -y
+make some changes so that we use import word instead of require
+add -> "type": "module"

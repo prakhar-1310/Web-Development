@@ -1,0 +1,28 @@
+.quote{
+    max-width: 700px;
+    margin : 20px auto;
+    padding: 16px;
+    background-color: aqua;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+h3{
+    font-size: 18px;
+    margin-top: 5px;
+}
+h3::before{
+    content: "~";
+}
+.quote p{
+    font-family: cursive;
+    font-weight: bold;
+    font-size: 26px;
+    margin: 0px;
+}
+.quote button{
+    font-size: 20px;
+    background-color: burlywood;
+    color: white;
+}

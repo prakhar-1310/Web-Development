@@ -1,0 +1,63 @@
+*** Socket.io
+
+- library for real time communication
+- it is a library of web Socket
+
+web socket : it is a protocol (like https://, http://)
+
+
+feature of socket:
+1. real time communication means 
+2. instantaneous, 
+3. low latency
+4. bidirectional
+5. event based communication (means send button click , event triggered, data send)
+
+
+
+traditional protocol : - ex. https://
+in this client establish a connection with the server means 1 way
+server never ask anything from the user until user not ask anything
+
+in traditional protocol:
+when client is establishing a connection with a server, then it passes through many layers(includes security layer)
+and it is not fixed that all time the server (there are many server available so that load can be balanced) will be same to serve our request
+So it takes time everytime when we request
+
+
+
+
+
+Socket:
+if user1 want to communicate with user2, then 
+user1 will establish connection with communication server
+and this server will establish connection with user2
+means two way communication, bi-directional 
+
+in this:
+only first time client or server takes time to connect with server or client, one connection established
+server will be fixed to serve our request
+so this is instantaneous(low latency or real time)
+
+
+
+
+
+
+
+Express server uses http protocol behind the scene
+so we cannot use express to create socket
+but we can use express for routing purpose
+
+to create socket we use http servers
+we wrap http server in socket protocol
+Socket(http Server)
+
+----------------------------------------
+
+Socket.IO:
+it is composed of two parts:
+1. which works on server side
+2. which works on client side
+
+npm i socket.io

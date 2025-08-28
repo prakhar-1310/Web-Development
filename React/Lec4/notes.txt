@@ -1,0 +1,36 @@
+***React-Router-DOM:
+2 type of applications
+MicroService: different Server for react + different server for backend(express)
+
+Monolithic: Single server
+
+React is a single page application means it will not reload or refresh to render a new page
+It can have multiple pages.
+
+-> React router dom is a 3rd party library which prevent from reloading the page when we render a new page.
+singup page -to-> login page ; 2 pages but no reloading
+npm i react-router-dom
+
+->To take advantages of react-router-dom:
+we have to do following changes in index.js file.
+
+import { BrowserRouter } from 'react-router-dom';
+<BrowserRouter>
+    App Component
+</BrowserRouter>
+
+
+
+
+
+-> React is client side rendering, and this is achieve by using react-router-dom
+
+anchor tag redirect to the link and refreshes the page
+but we dont want to refresh the page therefore we use Link tag(it do not refresses the page)
+Link is present in react-router-dom
+
+useNavigate is a function present in react-router-dom used to redirect 
+Ex. let navigate = useNavigate();
+    let redirectPagehandler=()=>{
+      navigate('/');
+    }

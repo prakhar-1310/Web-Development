@@ -1,0 +1,21 @@
+--> We will use render
+--> in package.json file -> 
+    "start" : 'node index.js'
+
+-> set environment variables (.env):
+    ex. mercant key : kfwsfw
+        dburl = mongodb+srv...........
+
+--> upload whole project folder on github
+--> now connect this folder to render
+
+set these env on render website in form of key values pair
+now in logs, manual deploy->clear build cache and deploy
+
+
+
+-----------------------------------------------------------------
+
+we can also use netlify for deploy 
+
+it is simple drag and drop

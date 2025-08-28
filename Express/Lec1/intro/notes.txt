@@ -1,0 +1,75 @@
+http: hyper text transfer protocol (set of rules)
+https , web sorted (ws)
+set of rule which interact with server
+we dont need to install http it come with node js
+
+ 
+
+we can create server using http but we use express 
+because in http we have to write very large amount of node
+Express less line of code
+
+
+->Express
+Express is a framework for node js (not of node js)
+framework or module or package
+Express work is to create web server
+behind the scene http work.
+it is modified version of http
+express node ke sath use kiya jata h na ki node ke jagah par
+react is a frame work of js
+
+
+npm install express
+
+
+-> Ports: decide and give a port our web app will rum
+2000-9000 port range (as in this range most of the port are empty)
+8080 -> we prefer for backend
+browser will send request to 8080 port 
+so request will be listen on 8080 port by our server
+from this range we give port no. to our server
+Server should be always ON
+
+
+-> app.use
+it is a middleware function:
+middleware func :-runs on every incoming request of the browser 
+
+
+--> Server stores things in 2 formats: (req,res both are stored in the form of object)
+1. request: browser send request to server 
+2. response: server response to the browser or user or client
+
+
+
+
+
+// nodemon is the application or tool that help develop nodejs type application by the auto starting the server whenever their is any changes
+npm install nodemon
+script:  "start": "nodemon ./index.js" // do this in package.json
+
+npm start or  node index.js or nodemon index.js<-- to start the server
+
+
+
+->Routing:
+for each incoming request we will get a different response
+-> types of request or methods (OR http methods)
+1. Get : is to ask for data (server se lena)
+2. Post : work to send data to server
+3. Put : use to modify the resource by 100% replacement or full modification
+4. Patch : use to modify , used for partial modification
+5. Delete :used to delete specific resource
+ 
+ "/" root path (by default path)
+And by default method is 'get'
+
+
+
+
+-> why i am studying methods:
+jo mai request bhejta hu mere server ko, us request ko hamara server 2 cheejo se
+samajhta h:
+1. methods (Ex. get, post)
+2. path (Ex. '/home')

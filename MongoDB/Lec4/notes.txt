@@ -1,0 +1,30 @@
+**For online use of DB we use mongoDB Atlas
+pass=> pDyQ0Uv2av0rbGZ9
+
+step:
+1. create project
+2. create cluster
+3. then copy password
+4. then add user
+5. network access : edit, allow access from everywhere
+6. cluster -> connect -> mongo for vs code
+mongodb+srv://prakharshahi9935:<db_password>@cluster0.5ozgjut.mongodb.net/
+replace password
+mongodb+srv://prakharshahi9935:pDyQ0Uv2av0rbGZ9@cluster0.5ozgjut.mongodb.net/
+this link is used for connecting
+
+
+
+
+
+client --req--> server ----req--> DB
+client <--res-- server <----res-- DB
+
+
+
+almost every mongoose method returns a promise
+and may takes somes time to do task 
+so we use asyc await
+
+
+ex. findByIdAndUpdate()  <---- returns a promise

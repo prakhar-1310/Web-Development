@@ -1,0 +1,21 @@
+index.js<---App.js<----TodoApp.js<-----TodoList.js(list)<--------Todo.js(1single)
+
+-> Add a new Todo
+form
+
+
+
+
+-> react is a single page application
+
+
+-> npm install react-icons
+
+-> states and props are immutable (we cannot change them directly but with the help of hooks we can)
+
+-> prevState : state1 --- > state2 ; here state1 is known as prevState
+
+-> local Storage : client side Storage / browser Storage
+->if we refresh the browser local storage rahega
+-> local storage stores the value in the form of key:value pair ; where value must be string, agr nhi hoga to it typecast into String
+

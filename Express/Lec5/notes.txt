@@ -1,0 +1,15 @@
+--> Static files in Express
+.html, .css, .js, .jpg, folder(inside this images .jpg, .png)
+
+
+--> we can change our 'views' folder name but we should not do so as it is convention
+
+-> we store all my static files in one folder named 'public'. it is not compulsory its a convention
+
+--> In views folder we can have many ejs file and we have to always write html header and footer in every ejs file
+  So, to save us from this repetitive tasks we use to divide html in two parts header & footer And we save these two files in 'partials' folder in 'views' folder 
+  -> partial contains repeated code
+
+
+
+

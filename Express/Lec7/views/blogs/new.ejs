@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>For adding a new blog</h1>
+    <fieldset>
+        <form action="/blogs" method="Post"> <!--method by default get -->
+            <!-- actions:form submit hone par kha jayega -->
+            <div>
+                <label for="author">Author:</label>
+                <input type="text" name ="author" id="author">
+                <!-- name is a key which will bind with input -->
+            </div>
+            <div>
+                <label for="comment">Comment:</label>
+                <input type="text" name = "comment" id="comment">
+            </div>
+            <button type="submit">Add blog</button>
+        </form>
+    </fieldset>
+</body>
+</html>

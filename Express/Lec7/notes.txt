@@ -1,0 +1,89 @@
+--> Get vs Post
+
+-> Get: This should be used to fetch/retrive the data.
+Can we send data using GET :- Yes but we dont do this
+  Because: Here the data is available inside our url as Query Parameter (?) means less secure
+  data sent using get that will be a plain string & only available as QP
+  limited amount of data can be sent 4096 bytes of data
+
+-> Post : This should be used to make the changes in the server(DB)
+Here the data is available as req.body
+More Secure (as data not available in url)
+data of different type can be sent ex. text, XML, JSON, etc.
+Huge huge amount of data can be sent by post.
+
+
+
+Strongly coupled application :- in which porigin path(localhost:3000) is fixed or known
+
+
+inside req ---> params-> subreddit,query->query String,body ->post, req.data
+in post it send entire form data in formdata(type of data) format
+express attach 'body' object with req 
+but by default req.body give us undefined
+
+
+
+to see the data:(body parsing middleware)
+app.use(express.json()) -> for json file
+app.use(express.urlencoded({extended : true}))  -> for formdata
+after this if we use req.body it will give us data
+
+
+res-> send(basically text bhejna),render(display/show template/page )
+
+form-> action (kis jagah par jakar submit hoga ,path),method(get or post , get by default)
+ 
+
+
+--> PostMan:
+ used to use post or get methods
+ sending data without using browser in different formats like .json, formData, etc.
+ Also used in testing
+
+
+--------------------------------------------------------------------------------------------------
+
+ --> RESTful Routing
+REpresentational: 
+State
+Tranfer
+Restful routing: this is just a way/architecture style (way of writing) of routes
+to interact with client and server
+This is just a convention
+
+Rest :1. Restful routing: jab aap HTML, CSS, JS wale pages show karte h.
+    2. Rest API: url hit -> we get data back (This is also an architecture)
+
+
+Restful Table:
+route name means file name
+url means path
+right to left
+method and url both together decides what the code do
+redirect : jb bhi redirect hota h toh page new nhi banta h kisi presious page pr redirect ho jata h 
+
+
+
+
+--> put vs patch -> both use for editing
+put: when we have to change all the fields / or we can say complete change
+patch : when we have to do partial changes
+
+
+--> form - 2 methods
+1. get -> fetch
+2. post -> for playing with server
+To edit something we use patch, but in form we have only 2 methods, therefore we have to convert post to patch,
+This process is known as 'method-overriding'
+To do this we have one npm package -> npm install method-override
+This a middleware therefore we have to use it
+
+
+
+
+Note:- we never hardcode the ID i.e, 0,1,2,3,4
+it should be unique because it is the only distinguishing factor
+to provide unique id we use npm package uuid (universely unique identity)
+npm install uuid
+id = uuid() // give id of string type
