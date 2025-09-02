@@ -15,6 +15,7 @@ feature of socket:
 
 
 
+
 traditional protocol : - ex. https://
 in this client establish a connection with the server means 1 way
 server never ask anything from the user until user not ask anything
@@ -56,8 +57,18 @@ Socket(http Server)
 ----------------------------------------
 
 Socket.IO:
-it is composed of two parts:
+-it is composed of two parts:
 1. which works on server side
 2. which works on client side
 
 npm i socket.io
+
+
+
+client and server connected with each other known as pipeline
+for every pipeline we have a unique socket.id
+io has many socket connections, every socket connection is a pipeline and every pipeline has unique socket id
+
+
+-----------------------------------------------------------------------
+
